@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    // colors
+    //sub-heading at the top of the app UI
+    --pale-violet: 276, 100%, 81%;
+    //chat on the left
+    --moderate-violet: 276, 55%, 52%;
+    //chat on the right
+    --desaturated-dark-violet: 271, 15%, 43%;
+    //placeholder text
+    --grayish-blue: 206, 6%, 79%;
+    //main heading , submit button background
+    --very-dark-desaturated-violet: 271, 36%, 24%;
+    //paragraph
+    --dark-grayish-violet: 270, 7%, 64%;
+
+    --white: 0, 0%, 100%;
+    //app background
+    --light-grayish-violet: 270, 20%, 96%;
+    // radio button outline
+    --very-light-magenta: 289, 100%, 72%;
+
+    // text color
+    --text-chat-left: var(--moderate-violet);
+    --text-chat-right: var(--desaturated-dark-violet);
+    --text-placeholder: var(--grayish-blue);
+    --text-heading: var(--very-dark-desaturated-violet);
+    --text-sub-heading: var(--dark-grayish-violet);
+    --text-fill: var(--dark-grayish-violet);
+
+    // gradient
+    --light-magenta: 293, 100%, 63%;
+    --light-violet: 264, 100%, 61%;
+
+    // background colors
+    --bg-fill: var(--light-grayish-violet);
+    --bg-chat-left: var(--light-magenta);
+    --bg-button-submit: var(--very-dark-desaturated-violet);
+    --bg-radio-outline: var(--very-light-magenta);
+  }
+
+  //make default form look nice
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"] {
+    @apply w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring-indigo-500;
+  }
+}
+
+@layer components {
+  //CUSTOM APPLY HERE
+  .btn {
+    @apply rounded-md px-5 py-6;
+  }
+
+  .chat-left {
+    @apply max-w-[70%] text-xs text-chat-left bg-chat-left/30 rounded-xl p-2 font-medium;
+  }
+
+  .chat-right {
+    @apply p-2 max-w-[60%] text-xs bg-white rounded-xl text-chat-right font-medium;
+  }
+}
