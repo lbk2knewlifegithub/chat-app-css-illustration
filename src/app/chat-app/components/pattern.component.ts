@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   slideInDownOnEnterAnimation,
-  slideInUpOnEnterAnimation
+  slideInUpOnEnterAnimation,
 } from 'angular-animations';
 
 @Component({
@@ -20,7 +20,7 @@ import {
         <!--  pattern bottom-->
         <div
           @slideInUpOnEnter
-          class="pattern right-0 bottom-0 bg-black opacity-[.017] rounded-tl-full lg:translate-x-[40%] lg:!h-[85%] lg:rounded-t-full"
+          class="hidden pattern right-0 bottom-0 bg-black opacity-[.017] rounded-tl-full lg:block lg:translate-x-[40%]  lg:!h-[85%] lg:rounded-t-full"
         ></div>
         <!--  end pattern bottom-->
       </div>
