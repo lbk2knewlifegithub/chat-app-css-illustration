@@ -1,42 +1,44 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  fadeInLeftOnEnterAnimation,
+  fadeInRightOnEnterAnimation
+} from 'angular-animations';
 
 @Component({
   selector: 'lbk-chat-app-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <main>
-      <!--  pattern-->
-      <div
-        class="absolute w-1/2 h-[550px] bg-gradient-to-b from-light-magenta to-light-violet rounded-br-full z-[-1]"
-      ></div>
-      <!--  end pattern-->
+      <lbk-pattern></lbk-pattern>
 
-      <div class="container relative z-50 grid lg:grid-cols-2">
-        <div class="relative grid flow-root place-content-center">
-          <!--  phone-->
-          <lbk-phone class="block mt-32 lg:mt-0"></lbk-phone>
-          <!--  end phone-->
-        </div>
+      <div
+        class="container grid gap-20 pt-24 place-items-center sm:gap-32 sm:pt-32 lg:grid-cols-2 lg:pt-0 lg:h-screen"
+      >
+        <!--  phone-->
+        <lbk-phone @fadeInLeftOnEnter class="lg:justify-self-end"></lbk-phone>
+        <!--  end phone-->
 
         <!-- text -->
-        <div class="container flex flex-col items-center justify-center mt-20">
+        <div
+          @fadeInRightOnEnter
+          class="max-w-xl text-center space-y-8 lg:text-left lg:justify-self-start"
+        >
           <h1
-            class="text-4xl font-bold text-center text-heading lg:text-5xl xl:text-6xl"
+            class="text-4xl font-semibold text-heading tracking-wide lg:text-5xl"
           >
             Simple booking
           </h1>
-          <p
-            class="max-w-2xl mt-8 font-medium leading-6 text-center text-sub-heading xl:text-lg"
-          >
+          <p class="leading-7 text-sub-heading xl:text-lg">
             Stay in touch with our dog walkers through he chat interface. This
             makes it easy to discuss arrangements and make bookings. Once the
             walked has been completed you can rate your walker and book agains
-            all though the cat.
+            all though the chat.
           </p>
         </div>
         <!-- end text -->
       </div>
     </main>
   `,
+  animations: [fadeInLeftOnEnterAnimation(), fadeInRightOnEnterAnimation()],
 })
 export class ChatAppPageComponent {}

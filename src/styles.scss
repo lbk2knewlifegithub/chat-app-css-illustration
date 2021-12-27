@@ -54,6 +54,11 @@
 }
 
 @layer components {
+  .container-large {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   //CUSTOM APPLY HERE
   .btn {
     @apply rounded-md px-5 py-6;
