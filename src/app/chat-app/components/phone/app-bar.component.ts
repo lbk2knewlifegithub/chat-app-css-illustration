@@ -16,13 +16,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       <div class="flex items-center justify-between mt-3">
         <div class="flex items-center gap-2">
           <!--        back-->
-          <div class="max-w-[10px]">
+          <button>
             <img
-              class="w-full invert-[1]"
+              class="duration-300 max-w-[10px] invert-[1] hover:!-translate-x-2"
               src="/assets/images/left-arrow.png"
               alt="Back"
             />
-          </div>
+          </button>
           <!--        end back-->
 
           <div class="flex gap-3">
